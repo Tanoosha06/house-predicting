@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>\House Price Predictor ML App</title>
+ 
+  <style>
+
+ 
+    p   {color: yellow;} 
+ 
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+     
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+     
+    .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #203864;
+  color: white;
+  text-align: center;
+   
+  /* unvisited link */ 
+  a:link { color: White; } 
+  /* visited link */ 
+  a:visited { color: green; }
+}   
+  </style>
+ 
+</head>
+ 
+<body>
+ <div class="login">
+     
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+         
+        <input align="center" type="number" name="bathrooms" placeholder="Bathrooms" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="balcony" placeholder="Balcony" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="total_sqft_int" placeholder="Total Squre Foot" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="bhk" placeholder="BHK" required="required" width="48" height="10" step=".01"/><br>
+        <input align="center" type="number" name="price_per_sqft" placeholder="Price Per Squre Foot" required="required" width="48" height="10" step=".01"/><br>
+        <input type="text" name="area_type" placeholder="Area Type" required="required" /><br>
+        <input type="text" name="availability" placeholder="House Availability" required="required" /><br>
+        <input type="text" name="location" placeholder="House Location" required="required" />        
+ 
+        <br>
+         
+        <br>
+         
+      
+         
+    </form>
+    </center>
+    
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ predicted price 54.7}}</h2>
+       </center>
+   </div>
+ 
+ </div>
+ 
+</body>
+</html>
